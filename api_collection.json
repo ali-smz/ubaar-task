@@ -1,0 +1,199 @@
+{
+	"info": {
+		"_postman_id": "c63a9398-d61b-4a4f-9db0-bdd38cc3a817",
+		"name": "ubaar task api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36353232"
+	},
+	"item": [
+		{
+			"name": "Request Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"phone_number\": \"09369109944\"}"
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/auth/request-login/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"auth",
+						"request-login",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login with Password",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"phone_number\": \"09369109944\", \"password\": \"12345678\"}"
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/auth/login-password/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"auth",
+						"login-password",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Request OTP",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"phone_number\": \"09369109944\"}"
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/auth/request-otp/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"auth",
+						"request-otp",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Verify OTP",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"phone_number\": \"09369109944\", \"code\": \"332777\"}"
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/auth/verify-otp/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"auth",
+						"verify-otp",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Set Profile",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"phone_number\": \"09369109944\", \"first_name\": \"علی\", \"last_name\": \"سمیع زاده\"}"
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/auth/set-profile/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"auth",
+						"set-profile",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Set Password",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"phone_number\": \"09369109944\", \"password\": \"12345678\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/auth/set-password/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"auth",
+						"set-password",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

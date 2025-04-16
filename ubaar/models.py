@@ -21,9 +21,9 @@ class UserManager(BaseUserManager):
         return user
 
 class User(AbstractBaseUser):
-    phone_number = models.CharField(max_length=15, unique=True)
-    full_name = models.CharField(max_length=100, blank=True)
-    email = models.EmailField(blank=True, null=True)
+    phone_number = models.CharField(max_length=11, unique=True)
+    first_name = models.CharField(max_length=100, blank=True)
+    last_name = models.CharField(max_length=100, blank=True)  
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
 
@@ -35,7 +35,7 @@ class User(AbstractBaseUser):
         return self.phone_number
 
 class OTPCode(models.Model):
-    phone_number = models.CharField(max_length=15)
+    phone_number = models.CharField(max_length=11)
     code = models.CharField(max_length=6)
     created_at = models.DateTimeField(auto_now_add=True)
     is_used = models.BooleanField(default=False)
@@ -45,12 +45,12 @@ class OTPCode(models.Model):
 
 class LoginAttempt(models.Model):
     ip_address = models.GenericIPAddressField()
-    phone_number = models.CharField(max_length=15, null=True, blank=True)
+    phone_number = models.CharField(max_length=11, null=True, blank=True)
     timestamp = models.DateTimeField(auto_now_add=True)
     successful = models.BooleanField(default=False)
 
 class RegisterAttempt(models.Model):
     ip_address = models.GenericIPAddressField()
-    phone_number = models.CharField(max_length=15)
+    phone_number = models.CharField(max_length=11)
     timestamp = models.DateTimeField(auto_now_add=True)
     successful = models.BooleanField(default=False)
